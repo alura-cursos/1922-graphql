@@ -1,0 +1,25 @@
+{
+  "name": "roteiro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alura-cursos/1922-graphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alura-cursos/1922-graphql/issues"
+  },
+  "homepage": "https://github.com/alura-cursos/1922-graphql#readme",
+  "dependencies": {
+    "json-server": "^0.16.1",
+    "nodemon": "^2.0.4"
+  }
+}
