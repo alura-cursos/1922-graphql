@@ -1,4 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer } = require('apollo-server')
+const { mergeTypeDefs } = require('graphql-tools')
+const userSchema = require('./users/schema/userSchema.graphql')
 
 const users = [
   {
@@ -11,25 +13,14 @@ const users = [
   }
 ]
 
-const typeDefs = gql `
-  type User {
-    nome: String!
-    ativo: Boolean!
-    email: String
-  }
-
-  type Query {
-    users: [User]
-  }
-
-`
-
 const resolvers = {
   Query: {
     users: () => users
   }
 
 }
+
+const typeDefs = mergeTypeDefs([userSchema])
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
