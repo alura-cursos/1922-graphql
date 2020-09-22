@@ -1,6 +1,4 @@
-const { ApolloServer } = require('apollo-server')
-const { mergeTypeDefs } = require('graphql-tools')
-const userSchema = require('./users/schema/userSchema.graphql')
+const { ApolloServer, gql } = require('apollo-server')
 
 const users = [
   {
@@ -13,17 +11,13 @@ const users = [
   }
 ]
 
-const resolvers = {
-  Query: {
-    users: () => users
+const typeDefs = gql `
+  type User {
+    nome: String!
+    ativo: Boolean!
+    email: String
   }
+`
 
-}
 
-const typeDefs = mergeTypeDefs([userSchema])
-
-const server = new ApolloServer({ typeDefs, resolvers })
-
-server.listen().then(({url}) => {
-  console.log(`Servidor rodando na porta ${url}`)
-})
+const server = new ApolloServer( { typeDefs, resolvers } )
