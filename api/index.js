@@ -17,7 +17,22 @@ const typeDefs = gql `
     ativo: Boolean!
     email: String
   }
+
+  type Query {
+    users: [User]
+  }
+
 `
 
+const resolvers = {
+  Query: {
+    users: () => users
+  }
 
-const server = new ApolloServer( { typeDefs, resolvers } )
+}
+
+const server = new ApolloServer({ typeDefs, resolvers })
+
+server.listen().then(({url}) => {
+  console.log(`Servidor rodando na porta ${url}`)
+})
