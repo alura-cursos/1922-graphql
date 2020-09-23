@@ -7,6 +7,11 @@ const userSchema = gql `
     email: String
   }
 
+  type Query {
+    users: [User]
+    primeiroUser: User
+  }
+
 `
 
 module.exports = userSchema
