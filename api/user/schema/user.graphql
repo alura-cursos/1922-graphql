@@ -9,7 +9,6 @@ const userSchema = gql `
 
   type Query {
     users: [User]
-    primeiroUser: User
   }
 
 `
