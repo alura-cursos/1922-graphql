@@ -41,6 +41,13 @@
       "ativo": true,
       "email": "m@m.com",
       "role": 2
+    },
+    {
+      "nome": "Laura Barros",
+      "ativo": true,
+      "email": "l@l.com",
+      "role": 2,
+      "id": 7
     }
   ],
   "roles": [
