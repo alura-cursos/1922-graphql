@@ -1,6 +1,11 @@
 const { GraphQLScalarType } = require('graphql')
 
 const userResolvers = {
+  RolesType: {
+    ESTUDANTE: "ESTUDANTE",
+    DOCENTE: "DOCENTE",
+    COORDENACAO: "COORDENACAO"
+  },
   DateTime: new GraphQLScalarType({
     name: 'DateTime',
     description: 'string de data e hora no formato ISO-8601',
