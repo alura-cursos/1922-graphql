@@ -60,9 +60,9 @@
     },
     {
       "nome": "Ricardo Chaves",
-      "ativo": true,
+      "ativo": false,
       "email": "s@s.com.br",
-      "role": 1,
+      "role": 2,
       "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 9
     }

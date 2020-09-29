@@ -14,7 +14,7 @@ const server = new ApolloServer( {
       usersAPI: new UsersAPI()
     }
   }
-} )
+ } )
 
 server.listen().then(({url}) => {
   console.log(`Servidor rodando na porta ${url}`)
