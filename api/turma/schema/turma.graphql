@@ -1,0 +1,23 @@
+const { gql } = require('apollo-server')
+
+const turmaSchema = gql `
+scalar DateTime
+
+  type Turma {
+    id: ID!
+    descricao: String!
+    horario: String!
+    vagas: Int!
+    inicio: DateTime
+    docente: User!
+    created_at: DateTime!
+  }
+
+  type Query {
+    turmas: [Turma]
+    turma (id: ID!): Turma
+  }
+
+`
+
+module.exports = turmaSchema
