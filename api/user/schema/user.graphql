@@ -10,6 +10,8 @@ scalar DateTime
     email: String
     role: Role!
     createdAt: DateTime
+    matriculas: [Matricula]
+
   }
 
   input UserInput {
@@ -38,24 +40,18 @@ scalar DateTime
 
   type Mutation {
     adicionaUser(user: UserInput): User!
-    atualizaUser(id: ID!, user: UserInput): atualizaUserResposta!
-    deletaUser(id: ID!): deletaUserResposta!
+    atualizaUser(id: ID!, user: UserInput): RespostaPadrao!
+    deletaUser(id: ID!): RespostaPadrao!
   }
 
-  interface respostaCustom {
+  interface Resposta {
     code: Int!
     mensagem: String!
   }
 
-  type deletaUserResposta implements respostaCustom {
+  type RespostaPadrao implements Resposta {
     code: Int!
     mensagem: String!
-  }
-
-  type atualizaUserResposta implements respostaCustom {
-    code: Int!
-    mensagem: String!
-    userAtualizado: User!
   }
 
 `
