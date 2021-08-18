@@ -15,9 +15,12 @@ const userSchema = gql `
 
   type Query {
     users: [User]
-    user(id: ID!): User! 
+    user(id: ID!): User!
   }
 
+  type Mutation {
+    adicionaUser(nome: String!, ativo: Boolean!, email: String, role: String!):  User!
+  }
 `
 
 module.exports = userSchema
