@@ -41,6 +41,14 @@
       "ativo": true,
       "email": "m@m.com",
       "role": 2
+    },
+    {
+      "nome": "marina Souza",
+      "ativo": true,
+      "email": "l@l.com",
+      "role": 2,
+      "createdAt": "2020-09-22T00:00:00.000Z",
+      "id": 7
     }
   ],
   "roles": [
