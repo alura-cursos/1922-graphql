@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js",
+    "start": "DEBUG=knex:query nodemon --inspect -e .js,json,graphql ./api/index.js",
+    "json-server" : "json-server ./api/data/dados.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +20,14 @@
   },
   "homepage": "https://github.com/alura-cursos/1922-graphql#readme",
   "dependencies": {
-    "json-server": "^0.16.1",
-    "nodemon": "^2.0.4"
+    "apollo-datasource-rest": "^0.9.4",
+    "apollo-server": "^2.17.0",
+    "dataloader": "^2.1.0",
+    "datasource-sql": "^1.3.0",
+    "graphql": "^15.3.0",
+    "graphql-tools": "^6.2.4",
+    "knex": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "sqlite3": "^5.0.0"
   }
 }

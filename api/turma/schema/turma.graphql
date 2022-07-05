@@ -1,0 +1,64 @@
+const { gql } = require('apollo-server')
+
+const turmaSchema = gql`
+
+scalar DateTime
+
+type Turma {
+  id: ID!
+  descricao: String!
+  horario: String
+  vagas: Int
+  inicio: DateTime
+  docente:User
+  created_at:DateTime 
+  matriculas: [Matricula]
+}
+
+input TurmaInput{
+  descricao: String!
+  horario: String
+  vagas: Int
+  inicio: DateTime
+  docente_id:Int!
+  created_at:DateTime
+}
+
+input TurmaUpdate{
+  descricao: String!
+  horario: String
+  vagas: Int
+  inicio: DateTime
+  docente_id:Int
+  created_at:DateTime
+}
+
+type RespostaPadrao implements respostaCustom {
+  code: Int!
+  mensagem: String!
+}
+
+type atualizaTurmaResposta implements respostaCustom {
+  code:Int!
+  mensagem: String!
+  turma:Turma
+}
+
+type Query {
+  turmas(page:Int, pageOffset:Int): [Turma]
+ 
+  turma_get(id:ID!): Turma
+}
+
+type Mutation {
+  
+  turma_add(novaTurma:TurmaInput): respostaPadrao 
+
+  turma_del(id:ID): respostaPadrao 
+
+  turma_upd(id: ID, turma:TurmaUpdate): atualizaTurmaResposta 
+
+}
+
+`
+module.exports = turmaSchema
